@@ -32,6 +32,6 @@ Step 2: A zip file will be downloaded. Now extract the zip file and then paste t
 Step 3: Open XAMPP, and click on the Config button then open php.ini in your editor.
 
 Step 4: Paste the following phrase in the php.ini file like as shown in the picture.
-        _extension=
+        _extension=mcrypt_
         
 Step 5: Now restart the XAMPP server to see the effects. You can also go to the PHPInfo(by clicking on admin in XAMPP) page to verify the installation.
