@@ -42,9 +42,20 @@ Step 4: Paste the following phrase in the php.ini file.
 Step 5: Now restart the XAMPP server to see the effects. You can also go to the PHPInfo(by clicking on admin in XAMPP) page to verify the installation.
 
 
-### Get SSL Private Key from pfx file 
+### Get SSL Private Key from pfx file
+NOTE: Open command line first and go to directory where your pfx file located.
+
 1. Take the file you exported (e.g. certname.pfx) and copy it to a system where you have OpenSSL installed. Note: the *.pfx file is in PKCS#12 format and includes both the certificate and the private key.
-2. Run the following command to export the private key: openssl pkcs12 -in certname.pfx -nocerts -out key.pem -nodes
-3. Run the following command to export the certificate: openssl pkcs12 -in certname.pfx -nokeys -out cert.pem
+2. Run the following command to export the private key: 
+
+    openssl pkcs12 -in certname.pfx -nocerts -out key.pem -nodes
+
+3. Run the following command to export the certificate: 
+
+    openssl pkcs12 -in certname.pfx -nokeys -out cert.pem
+    
 4. Run the following command to remove the passphrase from the private key: openssl rsa -in key.pem -out server.key 
+
+If cant export the private key, visit this site to enable then do the 1 to 4 steps above:
+https://support.globalsign.com/digital-certificates/digital-certificate-installation/personalsign-installation-step-2-locate-install-your-certificate
 
