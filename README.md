@@ -8,6 +8,8 @@
 2. **XAMPP**
     + [Get PHP Version](#get-php-version)
     + [Adding MCrypt Extension](#adding-mcrypt-extension)
+3. SSL
+    + [Get SSL Private Key from pfx file](#get-SSL-Private-Key-from-pfx-file)
     
 ### Get PHP Version
 - Open command prompt.
@@ -38,3 +40,11 @@ Step 4: Paste the following phrase in the php.ini file.
         _extension=mcrypt_
         
 Step 5: Now restart the XAMPP server to see the effects. You can also go to the PHPInfo(by clicking on admin in XAMPP) page to verify the installation.
+
+
+### Get SSL Private Key from pfx file 
+1. Take the file you exported (e.g. certname.pfx) and copy it to a system where you have OpenSSL installed. Note: the *.pfx file is in PKCS#12 format and includes both the certificate and the private key.
+2. Run the following command to export the private key: openssl pkcs12 -in certname.pfx -nocerts -out key.pem -nodes
+3. Run the following command to export the certificate: openssl pkcs12 -in certname.pfx -nokeys -out cert.pem
+4. Run the following command to remove the passphrase from the private key: openssl rsa -in key.pem -out server.key 
+
