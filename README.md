@@ -48,11 +48,11 @@ NOTE: Open command line first and go to directory where your pfx file located.
 1. Take the file you exported (e.g. certname.pfx) and copy it to a system where you have OpenSSL installed. Note: the *.pfx file is in PKCS#12 format and includes both the certificate and the private key.
 2. Run the following command to export the private key: 
 
-    openssl pkcs12 -in certname.pfx -nocerts -out key.pem -nodes
+    _openssl pkcs12 -in certname.pfx -nocerts -out key.pem -nodes_
 
 3. Run the following command to export the certificate: 
 
-    openssl pkcs12 -in certname.pfx -nokeys -out cert.pem
+    _openssl pkcs12 -in certname.pfx -nokeys -out cert.pem_
     
 4. Run the following command to remove the passphrase from the private key: openssl rsa -in key.pem -out server.key 
 
